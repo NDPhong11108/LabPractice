@@ -1,0 +1,6 @@
+s = input()
+print(len(s))
+print(s.strip())
+print(s.capitalize())
+print(s[::-1])
+print(s[1::2])

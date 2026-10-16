@@ -1,0 +1,5 @@
+s = input()
+print(f"Length: {len(s)}")
+print(f"Spaces: {s.count(' ')}")
+print(f"A-count: {s.lower().count('a')}")
+print(f"Words: {len(s.split())}")
