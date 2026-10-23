@@ -11,5 +11,5 @@ def trip_advice(battery, distance):
 
 try:
     print(trip_advice(int(input()), float(input())))
-except ValueError:
+except Exception:
     print("Error: Invalid input")
