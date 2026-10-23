@@ -20,5 +20,5 @@ try:
     score = int(input())
     debt = float(input())
     print(loan_decision(income, score, debt, input()))
-except ValueError:
+except Exception:
     print("Error: Invalid input")
