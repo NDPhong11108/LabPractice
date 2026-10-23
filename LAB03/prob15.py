@@ -1,0 +1,27 @@
+import math
+
+
+def loan_decision(income, score, debt, employed):
+    if not (math.isfinite(income) and income > 0 and math.isfinite(debt) and debt >= 0):
+        raise ValueError
+    if not 300 <= score <= 850 or employed not in ("True", "False"):
+        raise ValueError
+    ratio = debt / income
+    if score < 500:
+        return "Rejected: Low Credit Score"
+    if ratio > 0.5:
+        return "Rejected: High Debt"
+    if employed == "False":
+        return "Approved with Guarantor" if score >= 750 else "Rejected: Unemployed"
+    if score >= 700 and ratio <= 0.3:
+        return "Approved: Premium Rate"
+    return "Approved: Standard Rate"
+
+
+try:
+    income = float(input())
+    score = int(input())
+    debt = float(input())
+    print(loan_decision(income, score, debt, input()))
+except ValueError:
+    print("Error: Invalid input")
