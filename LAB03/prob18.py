@@ -1,18 +1,21 @@
 def merged_median(a, b):
-    merged = a + b
-    merged.sort()
-    mid = len(merged) // 2
-    if len(merged) % 2 == 1:
-        return float(merged[mid])
-    return (merged[mid - 1] + merged[mid]) / 2
+    a.extend(b)  # put all numbers into one list
+    a.sort()  # order them from small to big
+    size = len(a)
+    middle = size // 2
+    if size % 2 == 1:  # odd: take the middle number
+        return float(a[middle])
+    return (a[middle - 1] + a[middle]) / 2  # even: average the two middle numbers
 
 
-n = int(input())
+input()  # skip the size of the first list
 a = []
 for x in input().split():
     a.append(int(x))
-m = int(input())
+
+input()  # skip the size of the second list
 b = []
 for x in input().split():
     b.append(int(x))
+
 print(f"{merged_median(a, b):.1f}")
