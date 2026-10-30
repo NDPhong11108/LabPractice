@@ -5,6 +5,8 @@ def list_operations(numbers):
     print(*numbers[::-1])
 
 
-input()
-numbers = list(map(int, input().split()))
+n = int(input())
+numbers = []
+for x in input().split():
+    numbers.append(int(x))
 list_operations(numbers)
